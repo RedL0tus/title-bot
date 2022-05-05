@@ -1,0 +1,32 @@
+name = "title-bot"
+type = "javascript"
+compatibility_date = "2022-04-17"
+
+workers_dev = true
+
+kv_namespaces = [
+    { binding = "TITLE_BOT_STORE", id = "195939744e4645a6bc74bc5e5b64d2c3" }
+]
+
+[vars]
+WORKERS_RS_VERSION = "0.0.9"
+USERNAME = "SaltedFishBot"
+KV_STORE = "TITLE_BOT_STORE"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release" # required
+
+[build.upload]
+dir = "build/worker"
+format = "modules"
+main = "./shim.mjs"
+
+[[build.upload.rules]]
+globs = ["**/*.wasm"]
+type = "CompiledWasm"
+
+[triggers]
+crons = [ "* * * * *" ]
+
+# read more about configuring your Worker via wrangler.toml at:
+# https://developers.cloudflare.com/workers/cli-wrangler/configuration

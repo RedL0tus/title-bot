@@ -1,0 +1,37 @@
+[package]
+name = "title-bot"
+version = "0.1.0"
+authors = ["Kay Lin <i@v2bv.net>"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+log = "^0.4"
+serde = { version = "^1.0", features = ["derive"] }
+chrono = "^0.4"
+cfg-if = "^1.0"
+# worker = { git = "https://github.com/njaremko/workers-rs", branch = "improve-errors" }
+worker = "0.0.9"
+bincode = "^1.3"
+futures = "^0.3"
+chrono-tz = "^0.6"
+serde_json = "^1.0"
+telbot-types = "^0.3"
+worker_logger = "^0.2"
+telegram_types = "^0.6"
+new_string_template = "^1.3"
+
+# The `console_error_panic_hook` crate provides better debugging of panics by
+# logging them with `console.error`. This is great for development, but requires
+# all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
+# code size when deploying.
+console_error_panic_hook = { version = "^0.1", optional = true }
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
