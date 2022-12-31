@@ -410,7 +410,7 @@ pub async fn main_inner(
     bot.register_command("start", start);
     bot.register_command("status", status);
     bot.register_command("enable", enable);
-    bot.register_command("disable", enable);
+    bot.register_command("disable", disable);
     bot.register_command("set_template", set_template);
     bot.register_command("set_delimiter", set_delimiter);
     bot.register_command("set_timezone", set_timezone);
