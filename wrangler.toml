@@ -10,7 +10,7 @@ kv_namespaces = [
 
 [vars]
 WORKERS_RS_VERSION = "0.0.9"
-USERNAME = "SaltedFishBot"
+USERNAME = "big_bot_is_watching_you_bot"
 KV_STORE = "TITLE_BOT_STORE"
 
 [build]
