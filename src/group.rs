@@ -145,7 +145,7 @@ impl Group {
     }
 
     pub fn join_title_template(&self) -> String {
-        self.title_segment.join(&format!(" {} ", self.delimiter))
+        self.title_segment.join(&format!("{}", self.delimiter))
     }
 
     pub fn clear_title_template(&mut self) {
